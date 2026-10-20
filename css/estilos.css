@@ -1,0 +1,213 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fffaf2;
+    color: #333;
+}
+
+header {
+    background-color: #24594b;
+    color: white;
+    padding: 25px;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 15px;
+}
+
+nav {
+    margin-top: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #f2d7cf;
+}
+
+/* PORTADA */
+
+.portada {
+    min-height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #f2d7cf, #fff4df);
+}
+
+.portada-contenido {
+    max-width: 700px;
+}
+
+.subtitulo {
+    color: #a35f48;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.portada h2 {
+    font-size: 48px;
+    color: #24594b;
+    margin-bottom: 20px;
+}
+
+.portada p {
+    margin-bottom: 25px;
+    line-height: 1.8;
+}
+
+/* BOTONES */
+
+.boton, button {
+    display: inline-block;
+    background-color: #24594b;
+    color: white;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 7px;
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.boton:hover, button:hover {
+    background-color: #173f35;
+}
+
+/* CATÁLOGO */
+
+.contenedor {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.contenedor > h2 {
+    color: #24594b;
+    margin-bottom: 30px;
+}
+
+.productos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.producto {
+    width: 250px;
+    padding: 25px;
+    background-color: white;
+    border: 1px solid #e5e4da;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px #00000012;
+}
+
+.imagen {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.producto h3 {
+    color: #24594b;
+    margin-bottom: 10px;
+}
+
+.producto p {
+    margin: 12px 0;
+}
+
+/* CARRITO */
+
+.carrito {
+    margin-top: 50px;
+    padding: 30px;
+    background-color: #f2d7cf;
+    border-radius: 12px;
+}
+
+.carrito h2 {
+    color: #24594b;
+    margin-bottom: 20px;
+}
+
+#lista-carrito {
+    list-style: none;
+    margin: 20px auto;
+}
+
+#lista-carrito li {
+    background-color: white;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 7px;
+}
+
+/* CONTACTO */
+
+.contacto {
+    max-width: 650px;
+    margin: auto;
+    padding: 35px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px #00000012;
+    overflow-wrap: anywhere;
+}
+
+.contacto h2 {
+    color: #24594b;
+    margin-bottom: 25px;
+}
+
+.contacto p {
+    margin: 12px 0;
+    line-height: 1.7;
+}
+
+/* PIE DE PÁGINA */
+
+footer {
+    background-color: #173f35;
+    color: white;
+    text-align: center;
+    padding: 22px;
+    margin-top: 40px;
+}
+
+/* CELULARES */
+
+@media (max-width: 600px) {
+    .portada h2 {
+        font-size: 34px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 6px;
+    }
+
+    .producto {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .contacto {
+        padding: 22px;
+    }
+}

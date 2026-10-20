@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo - Cremería Mimi</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+<header>
+    <h1>Catálogo de productos</h1>
+
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="catalogo.html">Catálogo</a>
+        <a href="contacto.html">Contacto</a>
+    </nav>
+</header>
+
+<main class="contenedor">
+    <h2>Nuestros productos</h2>
+
+    <div class="productos">
+
+        <div class="producto">
+           <img src="img/queso_oreado.png" width="100px" height="100px">
+            <h3>Queso Oreado</h3>
+            <p>$160.00Kg</p>
+            <button onclick="agregar('Queso Oreado',160)">
+                Agregar al carrito
+            </button>
+        </div>
+
+        <div class="producto">
+            <img src="img/leche.png" width="100px" height="100px">
+            <h3>Leche</h3>
+            <p>$18.00</p>
+            <button onclick="agregar('Leche',18)">
+                Agregar al carrito
+            </button>
+        </div>
+
+        <div class="producto">
+            <img src="img/mantequilla.png" width="100px" height="100px">
+            <h3>Mantequilla</h3>
+            <p>$20.00</p>
+            <button onclick="agregar('Mantequilla',20)">
+                Agregar al carrito
+            </button>
+        </div>
+
+        <div class="producto">
+            <img src="img/crema.png" width="100px" height="100px">
+            <p>$70.00Kg</p>
+            <button onclick="agregar('Crema',70)">
+                Agregar al carrito
+            </button>
+        </div>
+
+        <div class="producto">
+            <img src="img/queso_oreado.png" width="100px" height="100px">
+            <h3>Panela</h3>
+            <p>$120.00Kg</p>
+            <button onclick="agregar('Panela',120)">
+                Agregar al carrito
+            </button>
+        </div>
+
+        <div class="producto">
+            <img src="img/atunes.png" width="100px" height="100px">
+            <h3>Atunes</h3>
+            <p>$25.00</p>
+            <button onclick="agregar('Atunes',25)">
+                Agregar al carrito
+            </button>
+        </div>
+
+    </div>
+
+    <section class="carrito">
+        <h2>🛒 Carrito de compras</h2>
+
+        <ul id="lista-carrito"></ul>
+
+        <h3>Total: $<span id="total">0.00</span></h3>
+
+        <button onclick="vaciarCarrito()">
+            Vaciar carrito
+        </button>
+    </section>
+</main>
+
+<script>
+let carrito = [];
+
+function agregar(nombre, precio) {
+    carrito.push({nombre: nombre, precio: precio});
+    mostrarCarrito();
+}
+
+function mostrarCarrito() {
+    const lista = document.getElementById("lista-carrito");
+    lista.innerHTML = "";
+
+    let total = 0;
+
+    carrito.forEach(function(producto, indice) {
+        total += producto.precio;
+
+        const elemento = document.createElement("li");
+        elemento.textContent =
+            producto.nombre + " - $" +
+            producto.precio.toFixed(2) + " ";
+
+        const boton = document.createElement("button");
+        boton.textContent = "Quitar";
+
+        boton.onclick = function() {
+            carrito.splice(indice, 1);
+            mostrarCarrito();
+        };
+
+        elemento.appendChild(boton);
+        lista.appendChild(elemento);
+    });
+
+    document.getElementById("total").textContent =
+        total.toFixed(2);
+}
+
+function vaciarCarrito() {
+    carrito = [];
+    mostrarCarrito();
+}
+</script>
+
+<footer>
+    <p>Cremería Mimi | Zapotiltic, Jalisco</p>
+</footer>
+
+</body>
+</html>
